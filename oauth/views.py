@@ -6,7 +6,7 @@ import os
 
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
-GOOGLE_REDIRECT_URI = "http://127.0.0.1:8000/auth/callback/"
+GOOGLE_REDIRECT_URI = "https://backend-project-42w3.onrender.com/auth/callback/"
 
 def google_login(request):
     google_auth_url = (
