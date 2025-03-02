@@ -5,8 +5,8 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 
 
-LOGIN_URL = "http://localhost:8000/auth/login/"
-CALLBACK_URL = "http://127.0.0.1:8000/auth/callback/"
+LOGIN_URL = "https://backend-project-42w3.onrender.com/auth/login/"
+CALLBACK_URL = "https://backend-project-42w3.onrender.com/auth/callback/"
     
 def con_drive(request):
     return redirect(LOGIN_URL)
