@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "de27baab-4761-4784-90e1-bffbffedfbb8",
+		"name": "Django Drive API endpoints",
+		"description": "This collection includes requests for Drive API endpoints for three main tasks - list files, upload files, and download files.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40891859"
+	},
+	"item": [
+		{
+			"name": "List Drive Files",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientId",
+							"value": "{{client-id}}",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "{{client-secret}}",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "https://www.googleapis.com/auth/userinfo.email    https://www.googleapis.com/auth/userinfo.profile  https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/drive.file",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://accounts.google.com/o/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://accounts.google.com/o/oauth2/auth",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "Google Auth",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://backend-project-42w3.onrender.com/drive/files",
+					"protocol": "https",
+					"host": [
+						"backend-project-42w3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"drive",
+						"files"
+					]
+				},
+				"description": "This request includes access token in header and the API endpoint receves a list of files in JSON format including file id. Acess Token is generated in the Authorisation tab."
+			},
+			"response": []
+		},
+		{
+			"name": "upload file",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "{{client-secret}}",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{client-id}}",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "https://www.googleapis.com/auth/userinfo.email    https://www.googleapis.com/auth/userinfo.profile  https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/drive.file",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://accounts.google.com/o/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://accounts.google.com/o/oauth2/auth",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "Google Auth",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1efce595-8f18-4850-b553-da873a5bc2e0"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://backend-project-42w3.onrender.com/drive/upload/",
+					"protocol": "https",
+					"host": [
+						"backend-project-42w3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"drive",
+						"upload",
+						""
+					]
+				},
+				"description": "Method POST, Include a key - file and upload a file.\n\nA valid response includes name, id, and type of file uploaded."
+			},
+			"response": []
+		},
+		{
+			"name": "download file",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientId",
+							"value": "{{client-id}}",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "{{client-secret}}",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "https://www.googleapis.com/auth/userinfo.email    https://www.googleapis.com/auth/userinfo.profile  https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/drive.file",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://accounts.google.com/o/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://accounts.google.com/o/oauth2/auth",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "Google Auth",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://backend-project-42w3.onrender.com/drive/download?file_id=1Vq2kqhofmO7QrlnwHBwpq151-Hn6QiKR",
+					"protocol": "https",
+					"host": [
+						"backend-project-42w3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"drive",
+						"download"
+					],
+					"query": [
+						{
+							"key": "file_id",
+							"value": "1Vq2kqhofmO7QrlnwHBwpq151-Hn6QiKR"
+						}
+					]
+				},
+				"description": "The file id received in list of files is updated in the query parameter and a GET request returns the file if available."
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
